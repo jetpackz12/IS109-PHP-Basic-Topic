@@ -4,11 +4,12 @@ $username = "root";
 $password = "";
 $dbname1 = "myDB1";
 $dbname2= "myDB2";
+$port = "3307";
 
 // MySQLi Procedural
 
 // Create connection
-$conn1 = mysqli_connect($servername, $username, $password, $dbname1);
+$conn1 = mysqli_connect($servername, $username, $password, $dbname1, $port);
 // Check connection
 if (!$conn1) {
   die("Connection failed: " . mysqli_connect_error());
@@ -35,7 +36,7 @@ echo "<br>";
 // MySQLi Object-Oriented
 
 // Create connection
-$conn2 = new mysqli($servername, $username, $password, $dbname2);
+$conn2 = new mysqli($servername, $username, $password, $dbname2, $port);
 // Check connection
 if ($conn2->connect_error) {
   die("Connection failed: " . $conn2->connect_error);
